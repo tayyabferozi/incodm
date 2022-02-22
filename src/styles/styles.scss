@@ -16,11 +16,25 @@
 .auth-container {
   display: flex;
   height: 100vh;
-  min-height: 1030px;
+  min-height: 600px;
+
+  &.signup {
+    min-height: 960px;
+  }
 
   & > * {
     width: 50%;
     flex-grow: 0;
+
+    @media screen and (max-width: 991px) {
+      &.left {
+        width: 45%;
+      }
+
+      &.right {
+        width: 55%;
+      }
+    }
   }
 
   .circles {
@@ -37,6 +51,16 @@
       padding: 100px;
     }
 
+    @media screen and (max-width: 991px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @media screen and (max-width: 794px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     display: flex;
     align-items: center;
 
@@ -44,6 +68,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
+      width: 24vw;
     }
 
     .main {
@@ -60,13 +85,47 @@
       // flex-direction: column;
       // align-items: center;
 
+      @media screen and (max-width: 991px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      @media screen and (max-width: 840px) {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
       * {
         color: #fff;
       }
 
       img {
         margin-top: 50px;
+        // height: 42vh;
         width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (max-height: 890px) {
+          max-height: 400px;
+        }
+
+        @media screen and (max-height: 800px) {
+          max-height: 330px;
+        }
+
+        @media screen and (max-width: 1440px) {
+          max-width: 300px;
+        }
+
+        @media screen and (max-width: 1023px) {
+          max-width: 250px;
+        }
+
+        @media screen and (max-width: 991px) {
+          max-width: 200px;
+        }
       }
 
       h1 {
@@ -84,38 +143,46 @@
           font-size: 30px;
         }
 
-        @media screen and (max-width: 950px) {
+        @media screen and (max-width: 920px) {
           font-size: 26px;
         }
 
-        @media screen and (max-width: 874px) {
-          font-size: 22px;
-        }
+        // @media screen and (max-width: 874px) {
+        //   font-size: 22px;
+        // }
 
-        @media screen and (max-width: 800px) {
-          font-size: 18px;
-        }
+        // @media screen and (max-width: 800px) {
+        //   font-size: 18px;
+        // }
       }
     }
   }
 
   .right {
-    margin-top: 120px;
+    display: flex;
+    align-items: center;
     padding-left: 60px;
     padding-right: 60px;
+
+    @media screen and (max-width: 1100px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
 
     .circles {
       right: 0;
       top: 0;
+      width: 23vw;
     }
 
     .main {
+      width: 100%;
       max-width: 560px;
       margin-left: auto;
       margin-right: auto;
 
       h2 {
-        margin-top: 130px;
+        margin-top: 60px;
 
         @media screen and (max-width: 991px) {
           font-size: 30px;
@@ -123,7 +190,7 @@
       }
 
       .form {
-        margin: 50px 0;
+        margin: 50px 0 0;
       }
     }
 

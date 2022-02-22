@@ -28,7 +28,7 @@ const Signin = () => {
           <button
             className="mt-4 btn btn-primary btn-auth"
             onClick={() => {
-              navigate("/reset-password");
+              navigate("/");
             }}
           >
             SIGN IN

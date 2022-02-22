@@ -14,11 +14,11 @@ h2 * {
   font-size: inherit;
 }
 
-a {
+a:not(.unstyled) {
   color: #e79436;
 }
 
-a:hover {
+a:not(.unstyled):hover {
   text-decoration: underline;
 }
 
@@ -72,6 +72,17 @@ textarea {
 .custom-form-control {
   position: relative;
   margin-bottom: 30px;
+  /* Firefox */
+}
+
+.custom-form-control input::-webkit-outer-spin-button,
+.custom-form-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-form-control input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .custom-form-control .pwd-icon {
@@ -123,6 +134,10 @@ textarea {
   user-select: none;
 }
 
+.custom-checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
 .custom-checkbox-container .checkmark {
   position: absolute;
   top: 0;
@@ -166,10 +181,6 @@ textarea {
   display: block;
 }
 
-.custom-checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
 .verification-inputs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,28 +203,33 @@ textarea {
 }
 
 .custom-select-container {
-  border-radius: 10px;
-  padding-left: 10px;
   border-radius: 5px;
   border: 1px solid #dedee4;
 }
 
 .custom-select-container .selected-text {
-  width: 60px;
+  padding: 14px 16px;
+  width: 100%;
   cursor: pointer;
   font-size: 16px;
-  color: #fff;
   margin-right: 17px;
   text-align: left;
 }
 
 .custom-select-container .selected-text::after {
-  content: url("/assets/vectors/select-arrow.svg");
+  content: url("../vectors/select-arrow.svg");
   position: absolute;
   top: 50%;
   right: 20px;
-  -webkit-transform: calc(-50%);
-          transform: calc(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.custom-select-container .selected-text.active::after {
+  -webkit-transform: translateY(-50%) rotateX(180deg);
+          transform: translateY(-50%) rotateX(180deg);
 }
 
 .custom-select-container ul {
@@ -223,7 +239,9 @@ textarea {
   border-radius: 4px;
   left: 0;
   top: 100%;
-  max-width: 130px;
+  border: 1px solid #dedee4;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .custom-select-container .select-options {
@@ -236,10 +254,10 @@ textarea {
 
 .custom-select-container li {
   list-style-type: none;
-  padding: 8px 20px;
+  padding: 8px 24px;
   cursor: pointer;
-  font-weight: 700;
   border-radius: 4px;
+  text-align: left;
 }
 
 .custom-select-container li:last-child {
@@ -247,11 +265,10 @@ textarea {
 }
 
 .custom-select-container li:hover {
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.025);
 }
 
 .custom-select-container .show-dropdown-options {
-  min-height: 50px;
   opacity: 1;
   visibility: visible;
 }
@@ -260,6 +277,48 @@ textarea {
   min-height: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+.mobile-number-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 1px solid #dedee4;
+  border-radius: 5px;
+}
+
+.mobile-number-input .custom-form-control {
+  margin: 0;
+}
+
+.mobile-number-input input {
+  border: 0;
+}
+
+.mobile-number-input .custom-select-container {
+  position: relative;
+  margin: 0;
+  border: none;
+  width: 93px;
+}
+
+.mobile-number-input .custom-select-container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: #dedee4;
+  height: 28px;
+  width: 1px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.mobile-number-input .custom-select-container .selected-text {
+  font-weight: bold;
 }
 
 * {
@@ -345,6 +404,42 @@ textarea {
   max-width: 480px;
 }
 
+@media screen and (max-width: 1350px) {
+  .auth-container .left .main h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .auth-container .left .main h1 {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .auth-container .left .main h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .auth-container .left .main h1 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 874px) {
+  .auth-container .left .main h1 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .auth-container .left .main h1 {
+    font-size: 18px;
+  }
+}
+
 .auth-container .right {
   margin-top: 120px;
   padding-left: 60px;
@@ -364,6 +459,12 @@ textarea {
 
 .auth-container .right .main h2 {
   margin-top: 130px;
+}
+
+@media screen and (max-width: 991px) {
+  .auth-container .right .main h2 {
+    font-size: 30px;
+  }
 }
 
 .auth-container .right .main .form {

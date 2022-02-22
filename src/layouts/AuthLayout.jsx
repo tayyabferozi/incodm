@@ -1,12 +1,13 @@
 import React from "react";
 import clsx from "clsx";
+
 import { useNavigate } from "react-router-dom";
 
 const AuthLayout = ({ signup, img, title, subTitle, children }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="auth-container">
+    <div className={clsx("auth-container", { signup })}>
       <div className="left">
         <img
           className="circles circle-left"

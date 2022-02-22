@@ -1,3 +1,25 @@
+%vertical-scrollbar {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
 h1 {
   font-size: 52px;
 
@@ -41,6 +63,10 @@ a:not(.unstyled) {
     width: 50px;
     height: 50px;
     display: block;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &.btn-primary {
@@ -50,17 +76,25 @@ a:not(.unstyled) {
     font-weight: 700;
   }
 
-  &.btn-auth {
-    text-align: center;
+  &.btn-auth,
+  &.btn-primary-outlined {
     min-width: 150px;
+    text-align: center;
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 30px;
     padding-right: 30px;
+  }
 
+  &.btn-auth {
     &:hover {
       background-color: $color8;
     }
+  }
+
+  &.btn-primary-outlined {
+    color: $color1;
+    border: 1px solid $color1;
   }
 }
 
@@ -84,11 +118,18 @@ textarea {
     -moz-appearance: textfield;
   }
 
+  .error-msg {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    color: $color10;
+  }
+
   .pwd-icon {
     position: absolute;
     right: 16px;
     top: calc(16px + 14px + 12px);
     cursor: pointer;
+    width: 26px;
   }
 
   label {
@@ -107,6 +148,13 @@ textarea {
 
     &::placeholder {
       color: $color6;
+    }
+  }
+
+  &.error {
+    input {
+      // color: $color10;
+      border-color: $color10;
     }
   }
 }
@@ -229,11 +277,14 @@ textarea {
     width: 100%;
     border-radius: 4px;
     overflow: hidden;
+    max-height: 150px;
+    overflow-y: auto;
+    @extend %vertical-scrollbar;
   }
 
   li {
     list-style-type: none;
-    padding: 8px 24px;
+    padding: 8px 16px;
     cursor: pointer;
     border-radius: 4px;
     text-align: left;
@@ -278,7 +329,7 @@ textarea {
     position: relative;
     margin: 0;
     border: none;
-    width: 93px;
+    width: 110px;
 
     &::after {
       content: "";
@@ -294,5 +345,61 @@ textarea {
     .selected-text {
       font-weight: bold;
     }
+  }
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid $color2;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+    &:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
   }
 }

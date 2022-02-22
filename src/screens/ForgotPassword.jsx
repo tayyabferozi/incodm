@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Input from "../components/Input";
 
 import AuthLayout from "../layouts/AuthLayout";
 
@@ -13,14 +14,11 @@ const ForgotPassword = () => {
       subTitle="Enter your registered email will send you link for reset password"
     >
       <div className="form">
-        <div className="custom-form-control">
-          <label htmlFor="email">Email</label>
-          <input type="email" placeholder="Enter Your Email" />
-        </div>
+        <Input id="email" label="Email" placeholder="Enter Your Email" />
         <div className="bottom">
           <button
             className="btn btn-primary btn-auth"
-            onClick={() => navigate("/verification")}
+            onClick={() => navigate("/reset-password")}
           >
             SEND
           </button>
