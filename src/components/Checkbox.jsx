@@ -8,6 +8,7 @@ const Checkbox = ({
   bold,
   small,
   withReorder,
+  ...rest
 }) => {
   return (
     <label
@@ -21,7 +22,7 @@ const Checkbox = ({
       {subLabel && (
         <div className="fs-11 fw-400 text-light-1 mt-1">{subLabel}</div>
       )}
-      <input type="checkbox" />
+      <input type="checkbox" {...rest} />
       <span className="checkmark"></span>
       {withReorder && (
         <img

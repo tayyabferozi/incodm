@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "../components/Dropdown";
+
 import Footer from "../components/Footer";
 
 const CreationLayout = ({ children }) => {
@@ -6,11 +9,23 @@ const CreationLayout = ({ children }) => {
     <>
       <div className="project-creation-container">
         <div className="header">
-          <img src="./assets/vectors/logo.svg" alt="logo" />
-          <div className="user-info">
-            <div className="img-placeholder">MT</div>
-            <div className="fw-bold">Mike Thomson</div>
-          </div>
+          <Link to="/">
+            <img src="./assets/vectors/logo.svg" alt="logo" />
+          </Link>
+          <Dropdown
+            dropdownItems={["Settings", "Logout"].map((el, idx) => {
+              return (
+                <Link to="#0" key={"user-info" + idx}>
+                  {el}
+                </Link>
+              );
+            })}
+          >
+            <div className="user-info">
+              <div className="img-placeholder">MT</div>
+              <div className="fw-bold">Mike Thomson</div>
+            </div>
+          </Dropdown>
         </div>
         <div className="title-container">
           <h2>Create Project</h2>

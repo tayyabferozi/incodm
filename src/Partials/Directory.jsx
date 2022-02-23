@@ -22,17 +22,15 @@ const Directory = ({ stepsComplete }) => {
         </p>
       </div>
 
-      <div className="custom-form-control">
-        <Select
-          id="directory"
-          label="Directory"
-          helper="Use the picker to start adding contacts."
-          placeholder="Select"
-        >
-          <Option value="lorem">lorem</Option>
-          <Option value="ipsum">ipsum</Option>
-        </Select>
-      </div>
+      <Select
+        id="directory"
+        label="Directory"
+        helper="Use the picker to start adding contacts."
+        placeholder="Select"
+      >
+        <Option value="lorem">lorem</Option>
+        <Option value="ipsum">ipsum</Option>
+      </Select>
 
       {stepsComplete && (
         <div className="table-container">

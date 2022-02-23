@@ -16,7 +16,10 @@ const CreateProject = () => {
   });
 
   const decrementStep = () => {
-    setStepState((prevState) => prevState - 1);
+    setStepState((prevState) => {
+      setStepsCompleteState(false);
+      return prevState - 1;
+    });
   };
 
   const incrementStep = () => {

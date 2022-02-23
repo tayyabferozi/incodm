@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Select from "../components/select/select";
 import Option from "../components/select/option";
 import Input from "../components/Input";
 import Checkbox from "../components/Checkbox";
+import InputDate from "../components/InputDate";
 
 const ProjectDetails = () => {
+  const [formState, setFormState] = useState({
+    startDate: "",
+    endDate: "",
+  });
+
+  const dateChangeHandler = (name, date) => {
+    setFormState((prevState) => {
+      return { ...prevState, [name]: date };
+    });
+  };
+
   return (
     <div className="project">
       <div className="sub-section">
@@ -35,6 +47,25 @@ const ProjectDetails = () => {
                 id="projectName"
                 label="Total Value*"
                 placeholder="Enter Project Name"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid px-0">
+          <div className="row">
+            <div className="col-lg-6">
+              <InputDate
+                selected={formState.startDate}
+                label="Start Date*"
+                onChange={(date) => dateChangeHandler("startDate", date)}
+              />
+            </div>
+            <div className="col-lg-6">
+              <InputDate
+                selected={formState.endDate}
+                label="Completion Date*"
+                onChange={(date) => dateChangeHandler("endDate", date)}
               />
             </div>
           </div>
