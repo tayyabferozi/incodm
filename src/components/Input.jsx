@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { useState } from "react";
 
-const Input = ({ id, label, type, errorMsg, ...rest }) => {
+const Input = ({ id, textarea, label, type, errorMsg, withInfo, ...rest }) => {
   const [pwdState, setPwdState] = useState("password");
 
   const togglePwdState = () => {
@@ -17,8 +17,34 @@ const Input = ({ id, label, type, errorMsg, ...rest }) => {
 
   return (
     <div className={clsx("custom-form-control", { error: errorMsg })}>
-      {label && <label htmlFor={id}>{label}</label>}
-      <input id={id} type={type === "password" ? pwdState : type} {...rest} />
+      {label && (
+        <label htmlFor={id}>
+          {label}
+          {withInfo && (
+            <img
+              className="ms-2 info"
+              src="./assets/vectors/info.svg"
+              alt="info"
+            />
+          )}
+        </label>
+      )}
+      {type === "file" && (
+        <>
+          <label className="uploader" htmlFor={id}>
+            <img src="./assets/vectors/upload.svg" alt="upload" />
+            <div className="text">{rest.placeholder}</div>
+          </label>
+          <div className="helper">
+            Image (JPG, PNG, or GIF) must be 200 x 70 pixels. File Max: 3MB
+          </div>
+        </>
+      )}
+      {textarea ? (
+        <textarea id={id} {...rest}></textarea>
+      ) : (
+        <input id={id} type={type === "password" ? pwdState : type} {...rest} />
+      )}
       {errorMsg && <p className="error-msg">{errorMsg}</p>}
       {type === "password" && (
         <img

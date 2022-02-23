@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Checkbox from "../components/Checkbox";
+
 import Input from "../components/Input";
 import Loader from "../components/Loader";
 
@@ -8,13 +11,15 @@ import AuthLayout from "../layouts/AuthLayout";
 const Signin = () => {
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
     setIsLoading(true);
 
     setTimeout(() => {
-      setIsLoading(false);
+      navigate("/create-project");
     }, 1000);
   };
 
@@ -38,11 +43,7 @@ const Signin = () => {
           placeholder="***************"
         />
         <div className="d-flex justify-content-between">
-          <label className="custom-checkbox-container">
-            Remember Me
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
+          <Checkbox label="Remember Me" />
           <Link className="unstyled" to="/forgot-password">
             Forgot Password ?
           </Link>

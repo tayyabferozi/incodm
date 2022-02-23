@@ -5,6 +5,7 @@ import ForgotPassword from "./screens/ForgotPassword";
 import ResetPassword from "./screens/ResetPassword";
 import Verification from "./screens/Verification";
 import Signup from "./screens/Signup";
+import CreateProject from "./screens/CreateProject";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/verification" element={<Verification />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/create-project" element={<CreateProject />} />
       </Routes>
     </Router>
   );

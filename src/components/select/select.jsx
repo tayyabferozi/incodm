@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import { SelectContext } from "./selectContext";
 
-const Select = ({ children, defaultValue, placeholder }) => {
+const Select = ({ id, label, helper, children, defaultValue, placeholder }) => {
   const [selectedOption, setSelectedOption] = useState(defaultValue || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const showDropdownHandler = () => setShowDropdown(!showDropdown);
@@ -23,6 +23,7 @@ const Select = ({ children, defaultValue, placeholder }) => {
       value={{ selectedOption, changeSelectedOption: updateSelectedOption }}
     >
       <div className="custom-form-control">
+        {label && <label htmlFor={id}>{label}</label>}
         <div className="custom-select-container" ref={selectContainerRef}>
           <div
             className={showDropdown ? "selected-text active" : "selected-text"}
@@ -40,6 +41,7 @@ const Select = ({ children, defaultValue, placeholder }) => {
             {children}
           </ul>
         </div>
+        {helper && <div className="helper">{helper}</div>}
       </div>
     </SelectContext.Provider>
   );

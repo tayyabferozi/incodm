@@ -20,6 +20,28 @@
   }
 }
 
+%horizontal-scrollbar {
+  /* width */
+  &::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
 h1 {
   font-size: 52px;
 
@@ -34,6 +56,46 @@ h2 {
   * {
     font-size: inherit;
   }
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fs-11 {
+  font-size: 11px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-13 {
+  font-size: 13px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.text-light-1 {
+  color: $color6;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-15 {
+  line-height: 1.5;
 }
 
 a:not(.unstyled) {
@@ -69,32 +131,52 @@ a:not(.unstyled) {
     }
   }
 
-  &.btn-primary {
-    background-color: $color1;
-    color: #fff;
+  &.btn-primary-text,
+  &.btn-primary,
+  &.btn-primary-outlined {
     font-size: 14px;
     font-weight: 700;
   }
 
-  &.btn-auth,
+  &.btn-primary,
   &.btn-primary-outlined {
-    min-width: 150px;
-    text-align: center;
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  &.btn-auth {
+  &.btn-primary {
+    background-color: $color1;
+    color: #fff;
+
     &:hover {
       background-color: $color8;
     }
   }
 
+  &.btn-auth,
+  &.btn-primary-outlined {
+    min-width: 150px;
+    text-align: center;
+  }
+
+  &.btn-primary-text {
+    color: $color1;
+  }
+
   &.btn-primary-outlined {
     color: $color1;
     border: 1px solid $color1;
+
+    &:hover {
+      background-color: $color1;
+      color: #fff;
+    }
+  }
+
+  &.no-min-width {
+    min-width: unset;
   }
 }
 
@@ -107,6 +189,10 @@ textarea {
   position: relative;
   margin-bottom: 30px;
 
+  input[type="file"] {
+    display: none;
+  }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -118,10 +204,42 @@ textarea {
     -moz-appearance: textfield;
   }
 
+  .helper,
   .error-msg {
-    margin-top: 0.5rem;
-    font-size: 12px;
+    margin-top: 12px;
+    font-size: 11px;
+  }
+
+  .helper {
+    color: $color6;
+  }
+
+  .error-msg {
     color: $color10;
+  }
+
+  .uploader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 26px;
+    border-radius: 6px;
+    border: 1px dashed $color7;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color9;
+      border-color: $color1;
+    }
+
+    img {
+      margin-bottom: 16px;
+    }
+
+    .text {
+      color: $color6;
+      font-size: 13px;
+    }
   }
 
   .pwd-icon {
@@ -133,18 +251,29 @@ textarea {
   }
 
   label {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-bottom: 12px;
     font-size: 12px;
+
+    .info {
+      cursor: pointer;
+    }
   }
 
-  input {
+  input,
+  textarea {
     display: block;
     border-radius: 5px;
     border: 1px solid $color7;
     padding: 14px 16px;
     display: block;
     width: 100%;
+    background-color: transparent;
+
+    &:focus {
+      border-color: $color1;
+    }
 
     &::placeholder {
       color: $color6;
@@ -162,24 +291,36 @@ textarea {
 .custom-checkbox-container {
   display: block;
   position: relative;
-  padding-left: 24px;
+  padding-left: 26px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 
+  &.with-reorder {
+    padding-left: 50px;
+  }
+
   &:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: $color7;
+  }
+
+  .reorder,
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .reorder {
   }
 
   .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 16px;
     width: 16px;
-    background-color: #eee;
+    border: 1px solid $color7;
     border-radius: 4px;
 
     &::after {
@@ -189,13 +330,19 @@ textarea {
     }
 
     &::after {
-      left: 6px;
-      top: 2px;
+      left: 5px;
+      top: 1px;
       width: 3px;
       height: 7px;
       border: solid white;
       border-width: 0px 2px 2px 0;
       transform: rotate(45deg);
+    }
+  }
+
+  &.with-reorder {
+    .checkmark {
+      left: 24px;
     }
   }
 
@@ -213,6 +360,10 @@ textarea {
         display: block;
       }
     }
+  }
+
+  &:hover input:checked ~ .checkmark {
+    background-color: $color8;
   }
 }
 
@@ -232,9 +383,6 @@ textarea {
 }
 
 .custom-select-container {
-  border-radius: 5px;
-  border: 1px solid $color7;
-
   .selected-text {
     padding: 14px 16px;
     width: 100%;
@@ -242,6 +390,12 @@ textarea {
     font-size: 16px;
     margin-right: 17px;
     text-align: left;
+    border-radius: 5px;
+    border: 1px solid $color7;
+
+    &.active {
+      border-color: $color1;
+    }
   }
 
   .selected-text::after {
@@ -402,4 +556,9 @@ textarea {
     height: 72px;
     opacity: 0;
   }
+}
+
+.table-container {
+  overflow-x: auto;
+  // @extend %horizontal-scrollbar;
 }
