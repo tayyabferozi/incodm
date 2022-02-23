@@ -17,7 +17,6 @@ const CreateProject = () => {
 
   const decrementStep = () => {
     setStepState((prevState) => {
-      setStepsCompleteState(false);
       return prevState - 1;
     });
   };
@@ -25,7 +24,6 @@ const CreateProject = () => {
   const incrementStep = () => {
     setStepState((prevState) => {
       if (prevState === 2) {
-        setStepsCompleteState(true);
         return prevState;
       } else {
         return prevState + 1;
@@ -33,7 +31,17 @@ const CreateProject = () => {
     });
   };
 
+  const jumpToStep = (idx) => {
+    setStepState(idx);
+  };
+
   useEffect(() => {
+    if (stepState === 0) {
+      setStepsCompleteState(false);
+    } else if (stepState === 2) {
+      setStepsCompleteState(true);
+    }
+
     if (stepState >= 1) {
       setSideInfoState({
         title: "Tool Order",
@@ -101,6 +109,7 @@ const CreateProject = () => {
                 <div
                   key={"step" + idx}
                   className={clsx("step", { active, done })}
+                  onClick={() => jumpToStep(idx)}
                 >
                   <div className="img">
                     <img
