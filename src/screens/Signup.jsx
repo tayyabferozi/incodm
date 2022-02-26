@@ -82,13 +82,10 @@ const Signup = () => {
               />
             </div>
             <div className="col-6">
-              <div className="custom-form-control">
-                <label htmlFor="lastName">Company Type</label>
-                <Select placeholder="Choose an option">
-                  <Option value="small">small</Option>
-                  <Option value="large">large</Option>
-                </Select>
-              </div>
+              <Select label="Company Type" placeholder="Choose an option">
+                <Option value="small">small</Option>
+                <Option value="large">large</Option>
+              </Select>
             </div>
           </div>
         </div>

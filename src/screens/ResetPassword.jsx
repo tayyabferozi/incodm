@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Input from "../components/Input";
 
 import AuthLayout from "../layouts/AuthLayout";
 
@@ -13,14 +14,12 @@ const ResetPassword = () => {
       subTitle="&nbsp;"
     >
       <div className="form">
-        <div className="custom-form-control">
-          <label htmlFor="password">Password</label>
-          <input type="password" placeholder="*****************" />
-        </div>
-        <div className="custom-form-control">
-          <label htmlFor="password">Confirm Password</label>
-          <input type="password" placeholder="*****************" />
-        </div>
+        <Input id="password" label="Password" placeholder="*****************" />
+        <Input
+          id="password2"
+          label="Confirm Password"
+          placeholder="*****************"
+        />
         <div className="bottom">
           <button
             className="btn btn-primary btn-auth"
