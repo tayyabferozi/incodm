@@ -53,7 +53,7 @@ const Signup = () => {
         <div className="custom-form-control">
           <label htmlFor="number">Mobile Number</label>
           <div className="mobile-number-input">
-            <Select placeholder="+91">
+            <Select placeholder="+972">
               {countryCodes.map((el) => {
                 return (
                   <Option key={el.dial_code} value={el.dial_code}>
