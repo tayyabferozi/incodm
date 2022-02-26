@@ -2,7 +2,16 @@ import React from "react";
 import clsx from "clsx";
 import { useState } from "react";
 
-const Input = ({ id, textarea, label, type, errorMsg, withInfo, ...rest }) => {
+const Input = ({
+  id,
+  rootClassName,
+  textarea,
+  label,
+  type,
+  errorMsg,
+  withInfo,
+  ...rest
+}) => {
   const [pwdState, setPwdState] = useState("password");
 
   const togglePwdState = () => {
@@ -16,7 +25,13 @@ const Input = ({ id, textarea, label, type, errorMsg, withInfo, ...rest }) => {
   };
 
   return (
-    <div className={clsx("custom-form-control", { error: errorMsg })}>
+    <div
+      className={clsx(
+        "custom-form-control",
+        { error: errorMsg },
+        rootClassName
+      )}
+    >
       {label && (
         <label htmlFor={id}>
           {label}
@@ -56,6 +71,13 @@ const Input = ({ id, textarea, label, type, errorMsg, withInfo, ...rest }) => {
           }
           alt="show"
           onClick={togglePwdState}
+        />
+      )}
+      {type === "search" && (
+        <img
+          className="search-icon"
+          src="./assets/vectors/search.svg"
+          alt="search"
         />
       )}
     </div>

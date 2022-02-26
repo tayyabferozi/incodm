@@ -1,7 +1,12 @@
 import React from "react";
+import clsx from "clsx";
 
-const Footer = () => {
-  return <div className="footer">© 2021 Incodm Technologies, Inc</div>;
+const Footer = ({ className }) => {
+  return (
+    <div className={clsx("footer", className)}>
+      © 2021 Incodm Technologies, Inc
+    </div>
+  );
 };
 
 export default Footer;

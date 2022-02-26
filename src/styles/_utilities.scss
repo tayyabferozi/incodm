@@ -66,6 +66,105 @@ h4 {
   font-size: 18px;
 }
 
+.ms-10 {
+  margin-left: 10px !important;
+}
+
+.me-10 {
+  margin-right: 10px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.m-10 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.my-10 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.mx-10 {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.ms-20 {
+  margin-left: 20px !important;
+}
+
+.me-20 {
+  margin-right: 20px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.m-20 {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.my-20 {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.mx-20 {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.ms-30 {
+  margin-left: 30px !important;
+}
+
+.me-30 {
+  margin-right: 30px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.my-30 {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+
+.mx-30 {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+.m-30 {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
 .fw-400 {
   font-weight: 400 !important;
 }
@@ -86,10 +185,6 @@ h4 {
   font-size: 14px !important;
 }
 
-.text-light-1 {
-  color: $color6;
-}
-
 .lh-1 {
   line-height: 1;
 }
@@ -104,6 +199,10 @@ a:not(.unstyled) {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.text-light-1 {
+  color: $color6;
 }
 
 .text-primary-1 {
@@ -131,6 +230,8 @@ a:not(.unstyled) {
     }
   }
 
+  &.btn-contained,
+  &.btn-contained-2,
   &.btn-primary-text,
   &.btn-primary,
   &.btn-primary-outlined {
@@ -138,6 +239,7 @@ a:not(.unstyled) {
     font-weight: 700;
   }
 
+  &.btn-contained,
   &.btn-primary,
   &.btn-primary-outlined {
     padding-top: 14px;
@@ -175,8 +277,48 @@ a:not(.unstyled) {
     }
   }
 
+  &.btn-transparent {
+    color: $color6;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  &.btn-contained {
+    color: $color1;
+    background-color: $color15;
+
+    &:hover {
+      background-color: $color16;
+    }
+  }
+
+  &.btn-contained-2 {
+    padding: 8px 20px;
+    color: $color1;
+    background-color: $color5;
+
+    &:hover {
+      background-color: $color16;
+    }
+  }
+
   &.no-min-width {
     min-width: unset;
+  }
+}
+
+.input-card {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+
+  .custom-form-control {
+    margin-bottom: 0;
   }
 }
 
@@ -242,12 +384,21 @@ textarea {
     }
   }
 
+  .search-icon,
   .pwd-icon {
     position: absolute;
-    right: 16px;
+  }
+
+  .pwd-icon {
     top: calc(16px + 14px + 12px);
+    right: 16px;
     cursor: pointer;
     width: 26px;
+  }
+
+  .search-icon {
+    top: 12px;
+    left: 16px;
   }
 
   .calender {
@@ -283,6 +434,15 @@ textarea {
 
     &::placeholder {
       color: $color6;
+    }
+
+    &[type="search"] {
+      padding-left: 44px;
+      background-color: $color9;
+
+      @media screen and (min-width: 991px) {
+        width: 333px;
+      }
     }
   }
 
@@ -436,7 +596,7 @@ textarea {
 
   .select-options {
     position: absolute;
-    top: 50px;
+    top: 100%;
     margin-top: 1px;
     width: 100%;
     border-radius: 4px;
@@ -473,6 +633,28 @@ textarea {
     opacity: 0;
     visibility: hidden;
   }
+
+  &.no-border {
+    &,
+    .selected-text {
+      border: none;
+    }
+
+    .selected-text {
+      padding: 4px 0;
+      font-size: 14px;
+
+      &::after {
+        right: 5px;
+      }
+    }
+  }
+
+  &.bold {
+    .selected-text {
+      font-weight: bold;
+    }
+  }
 }
 
 .mobile-number-input {
@@ -508,6 +690,7 @@ textarea {
 
     .selected-text {
       font-weight: bold;
+      border: none;
     }
   }
 }
@@ -592,6 +775,8 @@ textarea {
     top: 100%;
     width: 100%;
     padding-top: 6px;
+    left: 0;
+    font-weight: normal;
 
     .dropdown-items-main {
       background-color: #fff;
@@ -599,7 +784,8 @@ textarea {
       border: 1px solid $color7;
 
       li {
-        a {
+        a,
+        &.clickable {
           padding: 12px 16px;
           display: block;
           color: $color3;
@@ -622,6 +808,25 @@ textarea {
     .dropdown-items {
       opacity: 1;
       pointer-events: all;
+    }
+  }
+
+  &.btn {
+    padding: 14px 30px;
+    border: 1px solid $color7;
+    border-radius: 4px;
+    font-weight: 700;
+    color: $color6;
+    display: inline-block;
+    padding-right: 60px;
+    font-size: 14px;
+
+    .arrow {
+      right: 30px;
+    }
+
+    li {
+      font-size: 14px;
     }
   }
 }
@@ -648,4 +853,36 @@ textarea {
 
 .react-datepicker__current-month {
   color: $color1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+
+  .img-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: $color7;
+    border-radius: 50%;
+    margin-right: 8px;
+    text-align: center;
+    line-height: 2.75;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.badge {
+  height: 20px;
+  padding: 0 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 2;
+  display: inline-block;
+
+  &.success {
+    background-color: $color18;
+    color: $color19;
+  }
 }

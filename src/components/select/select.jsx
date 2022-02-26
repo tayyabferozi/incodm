@@ -1,8 +1,19 @@
 import React, { useState, useRef } from "react";
+import clsx from "clsx";
+
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import { SelectContext } from "./selectContext";
 
-const Select = ({ id, label, helper, children, defaultValue, placeholder }) => {
+const Select = ({
+  id,
+  label,
+  noBorder,
+  bold,
+  helper,
+  children,
+  defaultValue,
+  placeholder,
+}) => {
   const [selectedOption, setSelectedOption] = useState(defaultValue || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const showDropdownHandler = () => setShowDropdown(!showDropdown);
@@ -22,9 +33,16 @@ const Select = ({ id, label, helper, children, defaultValue, placeholder }) => {
     <SelectContext.Provider
       value={{ selectedOption, changeSelectedOption: updateSelectedOption }}
     >
-      <div className="custom-form-control">
+      <div className={clsx("custom-form-control")}>
         {label && <label htmlFor={id}>{label}</label>}
-        <div className="custom-select-container" ref={selectContainerRef}>
+        <div
+          className={clsx(
+            "custom-select-container",
+            { "no-border": noBorder },
+            { bold }
+          )}
+          ref={selectContainerRef}
+        >
           <div
             className={showDropdown ? "selected-text active" : "selected-text"}
             onClick={showDropdownHandler}

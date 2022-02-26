@@ -6,6 +6,7 @@ import ResetPassword from "./screens/ResetPassword";
 import Verification from "./screens/Verification";
 import Signup from "./screens/Signup";
 import CreateProject from "./screens/CreateProject";
+import Dashboard from "./screens/Dashboard";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/verification" element={<Verification />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/create-project" element={<CreateProject />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
