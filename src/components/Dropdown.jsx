@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 
-const Dropdown = ({ btn, children, dropdownItems }) => {
+const Dropdown = ({ rootClassName, btn, children, dropdownItems }) => {
   return (
-    <div className={clsx("dropdown", { btn })}>
+    <div className={clsx("dropdown", { btn }, rootClassName)}>
       {btn ? (
         <img
           className="arrow"

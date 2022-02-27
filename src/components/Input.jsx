@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const Input = ({
   id,
+  imp,
+  dull,
   rootClassName,
   textarea,
   label,
@@ -29,12 +31,14 @@ const Input = ({
       className={clsx(
         "custom-form-control",
         { error: errorMsg },
+        { dull },
         rootClassName
       )}
     >
       {label && (
         <label htmlFor={id}>
           {label}
+          {imp && <span className="text-danger">*</span>}
           {withInfo && (
             <img
               className="ms-2 info"

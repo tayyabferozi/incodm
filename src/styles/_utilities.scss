@@ -132,6 +132,39 @@ h4 {
   margin-right: 20px !important;
 }
 
+.ps-20 {
+  padding-left: 20px !important;
+}
+
+.pe-20 {
+  padding-right: 20px !important;
+}
+
+.pt-20 {
+  padding-top: 20px !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+.p-20 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.py-20 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.px-20 {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
 .ms-30 {
   margin-left: 30px !important;
 }
@@ -185,12 +218,26 @@ h4 {
   font-size: 14px !important;
 }
 
+.fs-1550-10 {
+  @media screen and (max-width: 1550px) {
+    font-size: 10px !important;
+  }
+}
+
 .lh-1 {
   line-height: 1;
 }
 
 .lh-15 {
   line-height: 1.5;
+}
+
+.bx {
+  border: 1px solid $color7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-left: 0;
+  border-right: 0;
 }
 
 a:not(.unstyled) {
@@ -267,13 +314,31 @@ a:not(.unstyled) {
     color: $color1;
   }
 
+  &.btn-contained-2,
+  &.btn-primary-outlined {
+    height: 46px;
+
+    img {
+      filter: invert(72%) sepia(96%) saturate(1088%) hue-rotate(328deg)
+        brightness(90%) contrast(101%);
+      margin-right: 10px;
+    }
+  }
+
   &.btn-primary-outlined {
     color: $color1;
     border: 1px solid $color1;
+    display: inline-flex;
+    align-items: center;
 
     &:hover {
       background-color: $color1;
       color: #fff;
+
+      img {
+        filter: invert(100%) sepia(5%) saturate(7500%) hue-rotate(269deg)
+          brightness(117%) contrast(101%);
+      }
     }
   }
 
@@ -448,7 +513,6 @@ textarea {
 
   &.error {
     input {
-      // color: $color10;
       border-color: $color10;
     }
   }
@@ -754,6 +818,18 @@ textarea {
 .table-container {
   overflow-x: auto;
   @extend %horizontal-scrollbar;
+
+  table {
+    .empty {
+      td {
+        height: 170px;
+        text-align: center;
+        font-size: 28px !important;
+        color: $color7;
+        font-weight: 700;
+      }
+    }
+  }
 }
 
 .dropdown {
@@ -777,6 +853,7 @@ textarea {
     padding-top: 6px;
     left: 0;
     font-weight: normal;
+    z-index: 1;
 
     .dropdown-items-main {
       background-color: #fff;
@@ -884,5 +961,95 @@ textarea {
   &.success {
     background-color: $color18;
     color: $color19;
+  }
+}
+
+.tabs {
+  display: flex;
+
+  .tab {
+    font-size: 13px;
+    margin-right: 1rem;
+    color: $color3;
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &.active {
+      border-bottom-color: $color1;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.collapse {
+  .collapse-title {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid $color5;
+
+    img.arrow {
+      width: 12px;
+      transition: 0.4s ease;
+    }
+
+    &.close {
+      img.arrow {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .collapse-body {
+    transition: unset;
+  }
+}
+
+.card {
+  border: 1px solid $color7;
+  border-radius: 10px;
+
+  .card-head,
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-head {
+    border-bottom: 1px solid $color7;
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+
+  &-item {
+    font-size: 13px;
+
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 22px;
+
+      &::after {
+        position: absolute;
+        right: -18px;
+        top: 50%;
+        transform: translateY(-50%);
+        content: url(../vectors/breadcrumb-arrow.svg);
+        pointer-events: none;
+      }
+    }
   }
 }

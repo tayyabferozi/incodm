@@ -7,6 +7,10 @@ import Verification from "./screens/Verification";
 import Signup from "./screens/Signup";
 import CreateProject from "./screens/CreateProject";
 import Dashboard from "./screens/Dashboard";
+import ProjectDetails from "./screens/ProjectDetails";
+import Specifications from "./screens/Specifications";
+import Meetings from "./screens/Meetings";
+import CreateMeeting from "./screens/CreateMeeting";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
         <Route path="/verification" element={<Verification />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/create-project" element={<CreateProject />} />
+        <Route path="/project" element={<ProjectDetails />} />
+        <Route path="/specifications" element={<Specifications />} />
+        <Route path="/meetings" element={<Meetings />} />
+        <Route path="/create-meeting" element={<CreateMeeting />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

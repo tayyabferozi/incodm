@@ -1,14 +1,21 @@
 import React from "react";
 import DatePicker from "react-datepicker";
+import clsx from "clsx";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const InputDate = ({ label, ...rest }) => {
+const InputDate = ({ label, noInfo, rootClassName, ...rest }) => {
   return (
-    <div className="custom-form-control">
+    <div className={clsx("custom-form-control", { rootClassName })}>
       <label htmlFor="startDate">
         {label}
-        <img className="info ms-2" src="./assets/vectors/info.svg" alt="info" />
+        {!noInfo && (
+          <img
+            className="info ms-2"
+            src="./assets/vectors/info.svg"
+            alt="info"
+          />
+        )}
       </label>
       <DatePicker
         placeholderText="DD-MM-YY"
