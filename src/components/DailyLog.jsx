@@ -1,13 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const DailyLog = ({ logMinimal }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="logs-container">
       <div className="main-title">
         <h3>Daily Log</h3>
         <div>
           <button className="btn btn-primary-text fs-12">FILTER</button>
-          <button className="btn btn-contained-2 fs-12 ms-20">VIEW ALL</button>
+          <button
+            className="btn btn-contained-2 fs-12 ms-20"
+            onClick={() => navigate("/daily-log")}
+          >
+            VIEW ALL
+          </button>
         </div>
       </div>
 

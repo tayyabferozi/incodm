@@ -11,6 +11,8 @@ import ProjectDetails from "./screens/ProjectDetails";
 import Specifications from "./screens/Specifications";
 import Meetings from "./screens/Meetings";
 import CreateMeeting from "./screens/CreateMeeting";
+import DailyLog from "./screens/DailyLog";
+import DailyLogCalender from "./screens/DailyLogCalender";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/specifications" element={<Specifications />} />
         <Route path="/meetings" element={<Meetings />} />
         <Route path="/create-meeting" element={<CreateMeeting />} />
+        <Route path="/daily-log" element={<DailyLog />} />
+        <Route path="/daily-log-calender" element={<DailyLogCalender />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

@@ -1147,3 +1147,127 @@
     }
   }
 }
+
+.daily-log,
+.daily-log-calender {
+  .top {
+    min-height: 86px;
+  }
+}
+
+.daily-log {
+  .card-head {
+    @media screen and (max-width: 1099px) {
+      flex-direction: column;
+
+      .cal-nav {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  & > .body {
+    .body-main {
+      .top {
+        flex-direction: row !important;
+        border: 0 !important;
+      }
+    }
+  }
+
+  table {
+    input,
+    .selected-text {
+      background-color: $color9;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .clip {
+        margin-right: 10px;
+      }
+
+      .text {
+        font-size: 14px;
+        color: $color1;
+        text-decoration: underline;
+      }
+    }
+
+    tr {
+      td {
+        &:nth-child(1) {
+          min-width: 240px;
+        }
+
+        &:nth-child(2) {
+          min-width: 120px;
+        }
+
+        &:nth-child(3) {
+          min-width: 120px;
+        }
+
+        &:nth-child(4) {
+          min-width: 120px;
+        }
+
+        &:nth-child(5) {
+          min-width: 240px;
+        }
+
+        &:nth-child(6) {
+          min-width: 240px;
+        }
+
+        &:nth-child(7) {
+          min-width: 256px;
+        }
+      }
+    }
+  }
+}
+
+.daily-log-calender {
+  .calender-container {
+    display: flex;
+    border: 1px solid $color7;
+    border-radius: 10px;
+
+    .calender-left > .header,
+    .calender-right {
+      padding: 30px;
+    }
+
+    .calender-left {
+      flex-grow: 1;
+      border-right: 1px solid $color7;
+    }
+
+    .calender-right {
+      width: 480px;
+      flex-shrink: 0;
+
+      .collapse {
+        margin-bottom: 5px;
+
+        .collapse-title {
+          background-color: $color9;
+          padding: 24px 20px;
+          border-radius: 4px;
+
+          h4 {
+            font-size: 14px;
+          }
+        }
+
+        .collapse-body {
+          padding: 24px 20px;
+        }
+      }
+    }
+  }
+}

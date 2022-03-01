@@ -42,6 +42,18 @@
   }
 }
 
+%clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
 h1 {
   font-size: 52px;
 
@@ -191,6 +203,10 @@ h4 {
   margin-right: 30px !important;
 }
 
+.b-0 {
+  border: none !important;
+}
+
 .m-30 {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
@@ -298,6 +314,12 @@ a:not(.unstyled) {
   &.btn-primary {
     background-color: $color1;
     color: #fff;
+
+    &.sm {
+      padding: 9px 12px;
+      height: 30px;
+      font-size: 12px;
+    }
 
     &:hover {
       background-color: $color8;
@@ -817,6 +839,7 @@ textarea {
 
 .table-container {
   overflow-x: auto;
+  overflow-y: clip;
   @extend %horizontal-scrollbar;
 
   table {
@@ -897,7 +920,6 @@ textarea {
     display: inline-block;
     padding-right: 60px;
     font-size: 14px;
-
     .arrow {
       right: 30px;
     }
@@ -1029,6 +1051,22 @@ textarea {
   .card-head {
     border-bottom: 1px solid $color7;
   }
+
+  .card-body {
+    display: flex;
+
+    .card-left {
+    }
+
+    .card-right {
+      padding: 30px 20px;
+      width: calc(100% - 220px);
+
+      .custom-form-control {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .breadcrumb {
@@ -1049,6 +1087,63 @@ textarea {
         transform: translateY(-50%);
         content: url(../vectors/breadcrumb-arrow.svg);
         pointer-events: none;
+      }
+    }
+  }
+}
+
+.cal-nav {
+  button {
+    &.prev,
+    &.next {
+      background-color: transparent;
+      border: 1px solid $color7;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    &.prev {
+      transform: rotate(90deg);
+    }
+
+    &.next {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.card-nav {
+  width: 220px;
+  border-right: 1px solid $color7;
+
+  .nav-item {
+    position: relative;
+    padding: 12px;
+    border-bottom: 1px solid $color7;
+    background-color: $color9;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &::after {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      content: url(../vectors/select-arrow.svg);
+      transform: rotate(-90deg);
+    }
+
+    &.active {
+      background-color: $color5;
+      color: $color1;
+
+      &::after {
+        content: url(../vectors/select-arrow-yellow.svg);
       }
     }
   }

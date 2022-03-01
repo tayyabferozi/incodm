@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import $ from "jquery";
 
-const Collapse = ({ title, children }) => {
+const Collapse = ({ title, closed, children }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = (e) => {
     const $this = $(e.target);
 
-    $this.siblings(".collapse-body").slideToggle();
+    $this.parents(".collapse").children(".collapse-body").slideToggle();
     setIsCollapsed((prevState) => !prevState);
   };
 
@@ -25,7 +25,12 @@ const Collapse = ({ title, children }) => {
           alt="arrow"
         />
       </div>
-      <div className="collapse-body">{children}</div>
+      <div
+        className="collapse-body"
+        style={{ display: closed ? "none" : "block" }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
