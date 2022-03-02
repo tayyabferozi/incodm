@@ -902,24 +902,23 @@
               margin-right: 20px;
             }
           }
+        }
+        .more-filters {
+          display: flex;
+          align-items: center;
 
-          .more-filters {
-            display: flex;
-            align-items: center;
+          & > * {
+            margin-left: 10px;
+            cursor: pointer;
+          }
 
-            & > * {
-              margin-left: 10px;
-              cursor: pointer;
-            }
+          img {
+            filter: invert(55%) sepia(1%) saturate(2134%) hue-rotate(206deg)
+              brightness(76%) contrast(84%);
 
-            img {
-              filter: invert(55%) sepia(1%) saturate(2134%) hue-rotate(206deg)
-                brightness(76%) contrast(84%);
-
-              &.active {
-                filter: invert(63%) sepia(88%) saturate(977%) hue-rotate(339deg)
-                  brightness(100%) contrast(82%);
-              }
+            &.active {
+              filter: invert(63%) sepia(88%) saturate(977%) hue-rotate(339deg)
+                brightness(100%) contrast(82%);
             }
           }
         }
@@ -1266,6 +1265,151 @@
 
         .collapse-body {
           padding: 24px 20px;
+        }
+      }
+    }
+  }
+}
+
+.drawings {
+  .card-left {
+    display: flex;
+    flex-direction: column;
+
+    .card-nav {
+      .nav-item {
+        &::after {
+          content: url(../vectors/menu.svg) !important;
+          transform: rotate(0deg) translateY(-50%);
+        }
+      }
+    }
+
+    .sets {
+      padding: 12px;
+      flex-grow: 1;
+
+      .set {
+        background-color: $color24;
+        border: 1px solid $color25;
+        border-radius: 4px;
+        padding: 12px;
+        margin-bottom: 10px;
+
+        .set-head {
+          padding-bottom: 8px;
+          border-bottom: 1px solid $color7;
+
+          img {
+            width: 16px;
+          }
+        }
+
+        .set-body {
+          padding: 8px 0;
+        }
+
+        .set-foot {
+          padding: 8px 0 0;
+          border-top: 1px solid $color7;
+        }
+      }
+    }
+
+    .reports {
+      background-color: $color9;
+      padding: 12px;
+      border-top: 1px solid $color7;
+
+      .report {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  table {
+    tr {
+      th,
+      td {
+      }
+
+      th {
+        .checkmark {
+          border-color: $color23;
+        }
+      }
+
+      td {
+        &:nth-child(2) {
+          min-width: 120px;
+        }
+
+        &:nth-child(3) {
+          min-width: 120px;
+        }
+
+        &:nth-child(4) {
+          min-width: 80px;
+        }
+
+        &:nth-child(5) {
+          min-width: 120px;
+        }
+
+        &:nth-child(6) {
+          min-width: 120px;
+        }
+
+        &:nth-child(7) {
+          min-width: 340px;
+        }
+
+        &:nth-child(8) {
+          min-width: 195px;
+        }
+
+        .btn {
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .drawing-grid {
+    .drawing-grid-item {
+      position: relative;
+      padding: 20px;
+      border: 1px solid $color7;
+      border-radius: 4px;
+      width: 246px;
+
+      @media screen and (max-width: 1080px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .custom-checkbox-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        .checkmark {
+          position: absolute;
+          top: 18px;
+          left: 10px;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+
+        .custom-checkbox-container {
+          opacity: 1;
         }
       }
     }

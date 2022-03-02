@@ -6,6 +6,7 @@ import { SelectContext } from "./selectContext";
 
 const Select = ({
   id,
+  rootClassName,
   label,
   noBorder,
   bold,
@@ -33,7 +34,7 @@ const Select = ({
     <SelectContext.Provider
       value={{ selectedOption, changeSelectedOption: updateSelectedOption }}
     >
-      <div className={clsx("custom-form-control")}>
+      <div className={clsx("custom-form-control", rootClassName)}>
         {label && <label htmlFor={id}>{label}</label>}
         <div
           className={clsx(

@@ -72,7 +72,7 @@ const DailyLog = () => {
             </div>
           </div>
         </div>
-        <div className="card-body p-0">
+        <div className="card-body p-0 d-flex">
           <div className="card-left">
             <div className="card-nav">
               {[

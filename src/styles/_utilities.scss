@@ -234,6 +234,10 @@ h4 {
   font-size: 14px !important;
 }
 
+.fs-16 {
+  font-size: 16px !important;
+}
+
 .fs-1550-10 {
   @media screen and (max-width: 1550px) {
     font-size: 10px !important;
@@ -293,6 +297,7 @@ a:not(.unstyled) {
     }
   }
 
+  &.btn-cancel,
   &.btn-contained,
   &.btn-contained-2,
   &.btn-primary-text,
@@ -302,6 +307,7 @@ a:not(.unstyled) {
     font-weight: 700;
   }
 
+  &.btn-cancel,
   &.btn-contained,
   &.btn-primary,
   &.btn-primary-outlined {
@@ -309,6 +315,18 @@ a:not(.unstyled) {
     padding-bottom: 14px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  &.btn-cancel {
+    background-color: $color17;
+    color: $color6;
+    // border: 1px solid transparent;
+
+    &:hover {
+      background-color: $color24;
+      // border-color: $color25;
+      // color: $color3;
+    }
   }
 
   &.btn-primary {
@@ -618,6 +636,16 @@ textarea {
   &:hover input:checked ~ .checkmark {
     background-color: $color8;
   }
+
+  &.input-end {
+    padding-left: 0;
+    padding-right: 26px;
+
+    .checkmark {
+      left: unset;
+      right: 0;
+    }
+  }
 }
 
 .verification-inputs {
@@ -837,9 +865,13 @@ textarea {
   }
 }
 
+.table-container-root {
+  .table-container {
+  }
+}
+
 .table-container {
   overflow-x: auto;
-  overflow-y: clip;
   @extend %horizontal-scrollbar;
 
   table {
@@ -1053,9 +1085,8 @@ textarea {
   }
 
   .card-body {
-    display: flex;
-
     .card-left {
+      border-right: 1px solid $color7;
     }
 
     .card-right {
@@ -1119,11 +1150,10 @@ textarea {
 
 .card-nav {
   width: 220px;
-  border-right: 1px solid $color7;
 
   .nav-item {
     position: relative;
-    padding: 12px;
+    padding: 15px 12px;
     border-bottom: 1px solid $color7;
     background-color: $color9;
     font-size: 13px;
@@ -1132,10 +1162,10 @@ textarea {
 
     &::after {
       position: absolute;
-      top: 12px;
       right: 12px;
       content: url(../vectors/select-arrow.svg);
-      transform: rotate(-90deg);
+      transform: rotate(-90deg) translateY(-50%);
+      top: 50%;
     }
 
     &.active {
@@ -1147,4 +1177,58 @@ textarea {
       }
     }
   }
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 6;
+  backdrop-filter: blur(4px);
+
+  &:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.custom-modal {
+  position: fixed;
+  padding: 30px 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 20px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+
+  .wrap {
+    overflow-y: auto;
+    max-height: 80vh;
+    padding-left: 30px;
+    padding-right: 30px;
+    @extend %vertical-scrollbar;
+  }
+
+  &:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, calc(-50% + 20px));
+  }
+
+  input,
+  .selected-text,
+  .uploader {
+    background-color: $color9;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color7;
 }

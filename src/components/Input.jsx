@@ -6,12 +6,16 @@ const Input = ({
   id,
   imp,
   dull,
+  helperClassName,
+  labelClassName,
   rootClassName,
   textarea,
   label,
   type,
   errorMsg,
   withInfo,
+  icon,
+  noHelper,
   ...rest
 }) => {
   const [pwdState, setPwdState] = useState("password");
@@ -51,12 +55,16 @@ const Input = ({
       {type === "file" && (
         <>
           <label className="uploader" htmlFor={id}>
-            <img src="./assets/vectors/upload.svg" alt="upload" />
-            <div className="text">{rest.placeholder}</div>
+            <img src={icon || "./assets/vectors/upload.svg"} alt="upload" />
+            <div className={clsx("text", labelClassName)}>
+              {rest.placeholder}
+            </div>
           </label>
-          <div className="helper">
-            Image (JPG, PNG, or GIF) must be 200 x 70 pixels. File Max: 3MB
-          </div>
+          {!noHelper && (
+            <div className={clsx("helper", helperClassName)}>
+              Image (JPG, PNG, or GIF) must be 200 x 70 pixels. File Max: 3MB
+            </div>
+          )}
         </>
       )}
       {textarea ? (

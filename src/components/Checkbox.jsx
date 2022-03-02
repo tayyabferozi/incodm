@@ -8,6 +8,7 @@ const Checkbox = ({
   bold,
   small,
   withReorder,
+  inputEnd,
   ...rest
 }) => {
   return (
@@ -16,6 +17,7 @@ const Checkbox = ({
         "fw-bold": bold,
         "fs-14": small,
         "with-reorder": withReorder,
+        "input-end": inputEnd,
       })}
     >
       {label}

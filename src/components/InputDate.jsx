@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const InputDate = ({ label, noInfo, rootClassName, ...rest }) => {
   return (
-    <div className={clsx("custom-form-control", { rootClassName })}>
+    <div className={clsx("custom-form-control", rootClassName)}>
       <label htmlFor="startDate">
         {label}
         {!noInfo && (
