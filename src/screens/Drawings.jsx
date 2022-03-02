@@ -113,7 +113,7 @@ const drawingData = [
 
 const Drawings = () => {
   const [listingTypeState, setListingTypeState] = useState("list");
-  const [isModalActive, setIsModalActive] = useState(true);
+  const [isModalActive, setIsModalActive] = useState(false);
   const [formState, setFormState] = useState({
     drawingDate: "",
     receivedDate: "",
