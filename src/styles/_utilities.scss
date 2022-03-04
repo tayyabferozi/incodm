@@ -1501,9 +1501,15 @@ hr {
   border: 1px solid $color7;
   border-radius: 4px;
   min-height: 184px;
+  background-color: $color9;
 
   .rdw-editor-toolbar {
     border: none;
+    background-color: $color9;
+  }
+  .rdw-dropdown-wrapper,
+  .rdw-option-wrapper {
+    background-color: transparent;
   }
 
   .rdw-editor-main {
