@@ -136,12 +136,12 @@ const ProjectDetails = () => {
                     <td>{mobile || "-"}</td>
                     <td>
                       <img
-                        className="me-10"
+                        className="me-10 c-pointer"
                         src="./assets/vectors/edit-table.svg"
                         alt="edit"
                       />
                       <img
-                        className="ms-10"
+                        className="ms-10 c-pointer"
                         src="./assets/vectors/delete-table.svg"
                         alt="delete"
                       />

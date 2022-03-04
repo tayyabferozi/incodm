@@ -138,79 +138,80 @@ const DailyLog = () => {
           </div>
           <div className="card-right">
             <h4 className="fs-20 mb-20">Manpower</h4>
-
-            <div className="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Company</th>
-                    <th>Workers</th>
-                    <th>Hours</th>
-                    <th>Total Hours</th>
-                    <th>Location</th>
-                    <th>Comments</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Select placeholder="Select Company">
-                        <Option value="company-1">Company 1</Option>
-                        <Option value="company-2">Company 2</Option>
-                        <Option value="company-3">Company 3</Option>
-                      </Select>
-                    </td>
-                    <td>
-                      <Select placeholder="1">
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
-                      </Select>
-                    </td>
-                    <td>
-                      <Select placeholder="1">
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
-                      </Select>
-                    </td>
-                    <td>
-                      <Select placeholder="1">
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
-                      </Select>
-                    </td>
-                    <td>
-                      <Select placeholder="Select Location">
-                        <Option value="location-1">Location 1</Option>
-                        <Option value="location-2">Location 2</Option>
-                        <Option value="location-3">Location 3</Option>
-                      </Select>
-                    </td>
-                    <td>
-                      <Input placeholder="Add Comments" />
-                    </td>
-                    <td>
-                      <div className="d-flex">
-                        <label htmlFor="file" className="d-flex me-20">
-                          <img
-                            className="clip"
-                            src="./assets/vectors/clip.svg"
-                            alt="clip"
-                          />
-                          <div className="text">Attach File(s)</div>
-                        </label>
-                        <input id="file" className="d-none" type="file" />
-                        <button className="ms-20 btn sm btn-primary">
-                          CREATE
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="table-container-root">
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Workers</th>
+                      <th>Hours</th>
+                      <th>Total Hours</th>
+                      <th>Location</th>
+                      <th>Comments</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Select placeholder="Select Company">
+                          <Option value="company-1">Company 1</Option>
+                          <Option value="company-2">Company 2</Option>
+                          <Option value="company-3">Company 3</Option>
+                        </Select>
+                      </td>
+                      <td>
+                        <Select placeholder="1">
+                          <Option value="1">1</Option>
+                          <Option value="2">2</Option>
+                          <Option value="3">3</Option>
+                        </Select>
+                      </td>
+                      <td>
+                        <Select placeholder="1">
+                          <Option value="1">1</Option>
+                          <Option value="2">2</Option>
+                          <Option value="3">3</Option>
+                        </Select>
+                      </td>
+                      <td>
+                        <Select placeholder="1">
+                          <Option value="1">1</Option>
+                          <Option value="2">2</Option>
+                          <Option value="3">3</Option>
+                        </Select>
+                      </td>
+                      <td>
+                        <Select placeholder="Select Location">
+                          <Option value="location-1">Location 1</Option>
+                          <Option value="location-2">Location 2</Option>
+                          <Option value="location-3">Location 3</Option>
+                        </Select>
+                      </td>
+                      <td>
+                        <Input placeholder="Add Comments" />
+                      </td>
+                      <td>
+                        <div className="d-flex">
+                          <label htmlFor="file" className="d-flex me-20">
+                            <img
+                              className="clip"
+                              src="./assets/vectors/clip.svg"
+                              alt="clip"
+                            />
+                            <div className="text">Attach File(s)</div>
+                          </label>
+                          <input id="file" className="d-none" type="file" />
+                          <button className="ms-20 btn sm btn-primary">
+                            CREATE
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

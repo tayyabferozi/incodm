@@ -1,13 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+
 import Collapse from "../components/Collapse";
-import { Calendar, momentLocalizer } from "react-big-calendar";
-import moment from "moment";
-import "react-big-calendar/lib/sass/styles.scss";
-
 import ListingLayout from "../layouts/ListingLayout";
-
-const localizer = momentLocalizer(moment);
 
 const DailyLogCalender = () => {
   return (
@@ -30,13 +26,7 @@ const DailyLogCalender = () => {
 
       <div className="calender-container">
         <div className="calender-left">
-          {/* <Calendar
-            localizer={localizer}
-            // events={myEventsList}
-            startAccessor="start"
-            endAccessor="end"
-            style={{ height: 500 }}
-          /> */}
+          <CalendarComponent></CalendarComponent>
         </div>
         <div className="calender-right">
           <div className="d-flex justify-content-between">

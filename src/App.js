@@ -14,6 +14,7 @@ import CreateMeeting from "./screens/CreateMeeting";
 import DailyLog from "./screens/DailyLog";
 import DailyLogCalender from "./screens/DailyLogCalender";
 import Drawings from "./screens/Drawings";
+import Landing from "./screens/Landing";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/daily-log" element={<DailyLog />} />
         <Route path="/daily-log-calender" element={<DailyLogCalender />} />
         <Route path="/drawings" element={<Drawings />} />
+        <Route path="/landing" element={<Landing />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

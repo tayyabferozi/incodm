@@ -111,6 +111,39 @@ h4 {
   margin-right: 10px !important;
 }
 
+.ms-15 {
+  margin-left: 15px !important;
+}
+
+.me-15 {
+  margin-right: 15px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.m-15 {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
+.my-15 {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.mx-15 {
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
 .ms-20 {
   margin-left: 20px !important;
 }
@@ -203,6 +236,105 @@ h4 {
   margin-right: 30px !important;
 }
 
+.ps-30 {
+  padding-left: 30px !important;
+}
+
+.pe-30 {
+  padding-right: 30px !important;
+}
+
+.pt-30 {
+  padding-top: 30px !important;
+}
+
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+
+.p-30 {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.py-30 {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+.px-30 {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.ms-40 {
+  margin-left: 40px !important;
+}
+
+.me-40 {
+  margin-right: 40px !important;
+}
+
+.mt-40 {
+  margin-top: 40px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.m-40 {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+
+.my-40 {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+.mx-40 {
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+
+.ms-50 {
+  margin-left: 50px !important;
+}
+
+.me-50 {
+  margin-right: 50px !important;
+}
+
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+
+.m-50 {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.my-50 {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+.mx-50 {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
 .b-0 {
   border: none !important;
 }
@@ -236,6 +368,10 @@ h4 {
 
 .fs-16 {
   font-size: 16px !important;
+}
+
+.fs-28 {
+  font-size: 28px !important;
 }
 
 .fs-1550-10 {
@@ -280,6 +416,10 @@ a:not(.unstyled) {
   color: $color2 !important;
 }
 
+.text-dark {
+  color: $color3 !important;
+}
+
 .btn {
   background: transparent;
   border: none;
@@ -297,6 +437,7 @@ a:not(.unstyled) {
     }
   }
 
+  &.btn-white,
   &.btn-cancel,
   &.btn-contained,
   &.btn-contained-2,
@@ -307,6 +448,7 @@ a:not(.unstyled) {
     font-weight: 700;
   }
 
+  &.btn-white,
   &.btn-cancel,
   &.btn-contained,
   &.btn-primary,
@@ -315,6 +457,15 @@ a:not(.unstyled) {
     padding-bottom: 14px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  &.btn-white {
+    background-color: #fff;
+    color: $color3 !important;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 
   &.btn-cancel {
@@ -506,10 +657,16 @@ textarea {
     left: 16px;
   }
 
-  .calender {
+  .calender,
+  .clock {
     position: absolute;
     right: 16px;
     top: calc(38px);
+    z-index: 1;
+  }
+
+  .clock {
+    top: calc(30px);
   }
 
   label {
@@ -866,13 +1023,22 @@ textarea {
 }
 
 .table-container-root {
+  overflow-x: auto;
+  @extend %horizontal-scrollbar;
+  @extend %vertical-scrollbar;
+  // border: 1px solid $color7;
+  padding-bottom: 6rem;
+
   .table-container {
+    overflow: unset;
+    // border: none;
   }
 }
 
 .table-container {
   overflow-x: auto;
   @extend %horizontal-scrollbar;
+  @extend %vertical-scrollbar;
 
   table {
     .empty {
@@ -1231,4 +1397,131 @@ textarea {
 hr {
   border: none;
   border-top: 1px solid $color7;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.e-calendar {
+  max-width: unset;
+
+  .e-content table {
+    padding: 0;
+
+    th,
+    td {
+      border: 0.5px solid rgba($color7, 0.5);
+    }
+  }
+
+  .e-header.e-month,
+  .e-bigger.e-small .e-header.e-month {
+    padding: 20px;
+  }
+
+  .e-content thead {
+    background-color: $color17;
+
+    th {
+      padding: 20px;
+      text-align: left;
+      color: $color3;
+    }
+  }
+
+  .e-header .e-title,
+  .e-bigger.e-small .e-calendar .e-header .e-title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .e-content.e-month td {
+    text-align: left;
+    padding: 12px;
+    padding-bottom: 8%;
+  }
+
+  .e-content td.e-today {
+    span.e-day {
+      color: $color1;
+      border-color: $color1;
+    }
+  }
+
+  .e-content td.e-today.e-selected span.e-day {
+    background-color: $color1;
+    border-color: $color1;
+  }
+
+  .e-content td.e-selected {
+    span.e-day {
+      background-color: $color1;
+      font-weight: bold;
+    }
+    &:hover {
+      span.e-day {
+        background-color: $color8;
+      }
+    }
+  }
+  .e-header .e-icon-container .e-prev,
+  .e-header .e-icon-container .e-next,
+  .e-bigger.e-small .e-header .e-icon-container .e-prev,
+  .e-bigger.e-small .e-header .e-icon-container .e-next {
+    border: 1px solid $color7;
+    border-radius: 4px;
+    margin: 0 5px;
+    transform: rotate(90deg);
+  }
+
+  .e-header .e-icon-container .e-prev {
+    transform: rotate(-90deg);
+  }
+
+  .e-header .e-icon-container .e-next {
+    transform: rotate(-90deg);
+  }
+
+  .e-btn.e-flat.e-primary,
+  .e-css.e-btn.e-flat.e-primary {
+    height: 46px;
+    width: 110px;
+    background-color: $color5;
+    transition: 0.4s ease;
+    margin-top: 18px;
+
+    &:hover {
+      background-color: $color16;
+    }
+  }
+}
+
+.wrapperClassName.rdw-editor-wrapper {
+  border: 1px solid $color7;
+  border-radius: 4px;
+  min-height: 184px;
+
+  .rdw-editor-toolbar {
+    border: none;
+  }
+
+  .rdw-editor-main {
+    padding: 14px 16px;
+  }
+}
+.rc-time-picker {
+  width: 100%;
+
+  .rc-time-picker-clear {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3rem;
+  }
+}
+.rc-time-picker-input {
+  height: 48px;
+  font-weight: 400;
+  color: $color3;
+  font-size: 16px;
 }

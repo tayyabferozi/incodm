@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import $ from "jquery";
 
-const Collapse = ({ title, closed, children }) => {
+const Collapse = ({ icon, title, closed, children }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = (e) => {
@@ -20,8 +20,8 @@ const Collapse = ({ title, closed, children }) => {
       >
         <h4 className="fs-20">{title}</h4>
         <img
-          className="arrow"
-          src="./assets/vectors/select-arrow.svg"
+          className={clsx({ arrow: !icon })}
+          src={icon || "./assets/vectors/select-arrow.svg"}
           alt="arrow"
         />
       </div>

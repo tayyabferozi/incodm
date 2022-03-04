@@ -136,17 +136,17 @@ const Specifications = () => {
                           </td>
                           <td className="text-center">
                             <img
-                              className="me-10"
+                              className="me-10 c-pointer"
                               src="./assets/vectors/eye.svg"
                               alt="eye"
                             />
                             <img
-                              className="me-10"
+                              className="me-10 c-pointer"
                               src="./assets/vectors/edit-table.svg"
                               alt="edit-table"
                             />
                             <img
-                              className="m"
+                              className="c-pointer"
                               src="./assets/vectors/delete-table.svg"
                               alt="delete-table"
                             />
