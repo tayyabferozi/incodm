@@ -38,7 +38,7 @@ const ESignature = () => {
       >
         <h3 className="fs-28">Create E-signature</h3>
 
-        <div className="tabs mt-20">
+        <div className="tabs-lg mt-20">
           <button className="btn tab active">UPLOAD</button>
           <button className="btn tab">TYPE</button>
         </div>
