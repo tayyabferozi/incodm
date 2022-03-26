@@ -13,7 +13,6 @@ const Specifications = () => {
   return (
     <ListingLayout
       rootClassName="specifications"
-      mainClassName="py-20"
       withSettings
       title="Specifications"
     >

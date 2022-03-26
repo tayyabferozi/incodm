@@ -350,6 +350,14 @@ h4 {
   font-weight: 400 !important;
 }
 
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
 .fs-11 {
   font-size: 11px !important;
 }
@@ -370,6 +378,10 @@ h4 {
   font-size: 16px !important;
 }
 
+.fs-20 {
+  font-size: 20px !important;
+}
+
 .fs-28 {
   font-size: 28px !important;
 }
@@ -386,6 +398,10 @@ h4 {
 
 .lh-15 {
   line-height: 1.5;
+}
+
+.bb-0 {
+  border-bottom: 0 !important;
 }
 
 .bx {
@@ -420,6 +436,18 @@ a:not(.unstyled) {
   color: $color3 !important;
 }
 
+.text-blue {
+  color: $color26;
+}
+
+.text-orange {
+  color: $color21;
+}
+
+.text-green {
+  color: $color27;
+}
+
 .btn {
   background: transparent;
   border: none;
@@ -441,6 +469,7 @@ a:not(.unstyled) {
   &.btn-cancel,
   &.btn-contained,
   &.btn-contained-2,
+  &.btn-danger,
   &.btn-primary-text,
   &.btn-primary,
   &.btn-primary-outlined {
@@ -451,6 +480,7 @@ a:not(.unstyled) {
   &.btn-white,
   &.btn-cancel,
   &.btn-contained,
+  &.btn-danger,
   &.btn-primary,
   &.btn-primary-outlined {
     padding-top: 14px;
@@ -477,6 +507,15 @@ a:not(.unstyled) {
       background-color: $color24;
       // border-color: $color25;
       // color: $color3;
+    }
+  }
+
+  &.btn-danger {
+    background-color: $color28;
+    color: $color20;
+
+    &:hover {
+      background-color: $color29;
     }
   }
 
@@ -1248,6 +1287,8 @@ textarea {
 
   .card-head {
     border-bottom: 1px solid $color7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   .card-body {
@@ -1389,7 +1430,8 @@ textarea {
 
   input,
   .selected-text,
-  .uploader {
+  .uploader,
+  textarea {
     background-color: $color9;
   }
 }
@@ -1530,4 +1572,29 @@ hr {
   font-weight: 400;
   color: $color3;
   font-size: 16px;
+}
+
+.bg-grey {
+  background-color: $color9;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .tab {
+    flex-grow: 1;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    padding: 1rem;
+    border-radius: 0;
+    color: $color6;
+    font-weight: 700;
+
+    &.active {
+      color: $color1;
+      border-bottom-color: $color1;
+    }
+  }
 }

@@ -22,7 +22,6 @@ const CreateMeeting = () => {
   return (
     <ListingLayout
       rootClassName="create-meeting"
-      mainClassName="py-20"
       withSettings
       title="Create A New Meeting"
     >

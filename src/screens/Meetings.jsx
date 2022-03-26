@@ -38,12 +38,7 @@ const Specifications = () => {
   const navigate = useNavigate();
 
   return (
-    <ListingLayout
-      rootClassName="meetings"
-      mainClassName="py-20"
-      withSettings
-      title="Meetings"
-    >
+    <ListingLayout rootClassName="meetings" withSettings title="Meetings">
       <div className="d-flex align-items-center justify-content-between">
         <div className="tabs">
           <div className="tab active">Current Meetings</div>

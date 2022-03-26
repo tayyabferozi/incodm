@@ -10,12 +10,7 @@ import Option from "../components/select/option";
 
 const DailyLog = () => {
   return (
-    <ListingLayout
-      withSettings
-      rootClassName="daily-log"
-      mainClassName="py-20"
-      title="Daily Log"
-    >
+    <ListingLayout withSettings rootClassName="daily-log" title="Daily Log">
       <div className="top pb-20">
         <div className="tabs">
           <NavLink to="/daily-log" className="tab">

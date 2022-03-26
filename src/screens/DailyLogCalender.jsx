@@ -10,7 +10,6 @@ const DailyLogCalender = () => {
     <ListingLayout
       withSettings
       rootClassName="daily-log-calender"
-      mainClassName="py-20"
       title="Daily Log"
     >
       <div className="top b-0 pb-20 d-flex align-items-center flex-row">

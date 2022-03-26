@@ -138,12 +138,7 @@ const Drawings = () => {
   };
 
   return (
-    <ListingLayout
-      withSettings
-      rootClassName="drawings"
-      mainClassName="py-20"
-      title="Drawings"
-    >
+    <ListingLayout withSettings rootClassName="drawings" title="Drawings">
       <Modal active={isModalActive} hideModal={hideModal}>
         <h4>Upload Drawings</h4>
 

@@ -125,7 +125,12 @@ const Dashboard = () => {
     setListingTypeState(type);
   };
   return (
-    <ListingLayout withLog rootClassName="portfolio" title="Portfolio">
+    <ListingLayout
+      mainClassName="py-30"
+      withLog
+      rootClassName="portfolio"
+      title="Portfolio"
+    >
       <div className="top">
         <div className="tabs">
           <div to="#0" className="tab active">

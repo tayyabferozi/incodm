@@ -97,6 +97,7 @@ const chartData = {
 const ProjectDetails = () => {
   return (
     <ListingLayout
+      mainClassName="py-30"
       withSettings
       rootClassName="project"
       title="Refined Homes"
